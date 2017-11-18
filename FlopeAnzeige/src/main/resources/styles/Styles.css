@@ -1,3 +1,45 @@
-.button {
-    -fx-font-weight: bold;
+.root {
+	-fx-background-color: #25a3a2; 
+	-fx-background-image: url('sample1.jpg');
+	-fx-background-size: cover;
+	
+	
+	-fx-font: 14px "Calibri";
 }
+
+
+.text-field{
+	
+-fx-background-color: white;
+-fx-color: white;	
+-fx-font: 12px "Calibri";
+
+} 
+
+.button{
+	
+	-fx-background-color: white; 
+    -fx-border: none;
+    -fx-color: white;
+    -fx-padding: 3px 10px;
+    -fx-text-align: center;
+    -fx-text-decoration: none;
+    -fx-display: inline-block;
+    -fx-font: 12px "Calibri";
+    -fx-opacity: 0.6;
+    -fx-alignment: center ;
+    -fx-transition-duration: 0.4s;
+    -fx-width: 250px;
+   } 
+   
+   
+
+.button:hover{
+	-fx-background-color: black;
+	-fx-color:black;
+	
+}
+
+
+	
+
