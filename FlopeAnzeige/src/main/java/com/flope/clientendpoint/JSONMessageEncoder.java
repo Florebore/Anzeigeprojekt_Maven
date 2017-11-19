@@ -9,6 +9,6 @@ package com.flope.clientendpoint;
  *
  * @author Florian
  */
-public class MessageDecoder {
+public class JSONMessageEncoder {
     
 }

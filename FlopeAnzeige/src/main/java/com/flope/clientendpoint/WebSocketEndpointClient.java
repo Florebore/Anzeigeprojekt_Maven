@@ -17,7 +17,7 @@ import javax.websocket.Session;
  *
  * @author Florian
  */
-public class WebserverEndpoint extends Endpoint {
+public class WebSocketEndpointClient extends Endpoint {
     
     private Session session;
     
@@ -33,6 +33,6 @@ public class WebserverEndpoint extends Endpoint {
         
         try {this.session.getBasicRemote().sendText(message);}
    catch (IOException ex)
-   {Logger.getLogger(WebserverEndpoint.class.getName()).log(Level.SEVERE,null,ex);}
+   {Logger.getLogger(WebSocketEndpointClient.class.getName()).log(Level.SEVERE,null,ex);}
     }
 }
