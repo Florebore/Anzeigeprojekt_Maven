@@ -10,6 +10,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import javax.websocket.ContainerProvider;
 import javax.websocket.DeploymentException;
+import javax.websocket.OnMessage;
 import javax.websocket.WebSocketContainer;
 import org.junit.Test;
 
@@ -27,9 +28,13 @@ public class TestConnection {
         
         WebserverEndpoint endpoint = new WebserverEndpoint();
         WebSocketContainer container = ContainerProvider.getWebSocketContainer();
-        container.connectToServer(endpoint,new URI("ws://localhost:8080/Flope_WebSocketServer/endpoint"));
-        endpoint.sendMessage("test");
+        container.connectToServer(endpoint,new URI("ws://localhost:8080/Anzeigeprojekt_Server/endpoint"));
+        endpoint.sendMessage("test1");
     }
+    
+   
+ 
+    
     
     
 }
