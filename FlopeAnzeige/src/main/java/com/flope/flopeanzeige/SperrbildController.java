@@ -55,10 +55,10 @@ public class SperrbildController {
        
        
          Parent root;
-        root = FXMLLoader.load(getClass().getResource("Sperrbildschirm.fxml"));
+        root = FXMLLoader.load(getClass().getResource("/fxml/Sperrbildschirm.fxml"));
          Stage stage = new Stage();
          stage.setScene(new Scene(root));
-         root.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+         root.getStylesheets().add(getClass().getResource("/styles/Styles.css").toExternalForm());
          stage.show();
          System.out.println(sperrbildtest);
        //  sperrbildtest.setImage(bild.getsperrbild());

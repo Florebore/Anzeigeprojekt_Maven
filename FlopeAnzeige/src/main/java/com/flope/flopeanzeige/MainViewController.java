@@ -5,6 +5,7 @@
  */
 package com.flope.flopeanzeige;
 
+import JSONConverter.POJOtoJSON;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTimePicker;
 import java.io.File;
@@ -81,7 +82,7 @@ public class MainViewController implements Initializable {
     
     public void ChangeScreen(ActionEvent event) throws IOException {
         
-         Parent MainView = FXMLLoader.load(getClass().getResource("Login.fxml"));
+         Parent MainView = FXMLLoader.load(getClass().getResource("/fxml/Login.fxml"));
          
          Scene MainScene = new Scene(MainView);
          
@@ -174,6 +175,13 @@ public class MainViewController implements Initializable {
        soleScheduler = Scheduler.getInstance();
                
       soleScheduler.addtowaitList(job);
+      
+      POJOtoJSON conv = new POJOtoJSON();
+      
+      conv.convertoJSON(job);
+      
+    
+              
        
       
        

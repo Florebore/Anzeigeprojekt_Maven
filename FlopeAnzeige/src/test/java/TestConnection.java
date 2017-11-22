@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-import com.flope.clientendpoint.WebserverEndpoint;
+import com.flope.clientendpoint.WebSocketEndpointClient;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -20,13 +20,13 @@ import org.junit.Test;
  * @author Florian
  */
     
-
+/*
 public class TestConnection {
     
     @Test
     public void sendMessage() throws URISyntaxException, DeploymentException, IOException{
         
-        WebserverEndpoint endpoint = new WebserverEndpoint();
+        WebSocketEndpointClient endpoint = new WebSocketEndpointClient();
         WebSocketContainer container = ContainerProvider.getWebSocketContainer();
         container.connectToServer(endpoint,new URI("ws://localhost:8080/Anzeigeprojekt_Server/endpoint"));
         endpoint.sendMessage("test1");
@@ -39,4 +39,4 @@ public class TestConnection {
     
 }
     
-
+*/
