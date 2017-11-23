@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.flope.flopeanzeige;
+package com.flope.flopeanzeige.controller;
 
+import com.flope.flopeanzeige.Bild;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import javafx.fxml.FXML;

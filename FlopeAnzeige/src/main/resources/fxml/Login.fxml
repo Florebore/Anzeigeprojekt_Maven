@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="EinlogBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="400.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.flope.flopeanzeige.LoginController">
+<BorderPane fx:id="EinlogBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="400.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.flope.flopeanzeige.controller.LoginController">
    <top>
       <Label fx:id="LabelLogin" text="Login" BorderPane.alignment="BOTTOM_CENTER">
          <font>

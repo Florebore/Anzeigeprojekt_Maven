@@ -1,4 +1,4 @@
-package com.flope.flopeanzeige;
+package com.flope.flopeanzeige.controller;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -6,6 +6,7 @@ package com.flope.flopeanzeige;
  * and open the template in the editor.
  */
 
+import com.flope.flopeanzeige.User;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;

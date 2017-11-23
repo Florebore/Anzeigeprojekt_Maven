@@ -3,9 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.flope.flopeanzeige;
+package com.flope.flopeanzeige.controller;
 
+import JSONConverter.JSONtoPOJO;
+import com.flope.flopeanzeige.controller.SperrbildController;
 import JSONConverter.POJOtoJSON;
+import com.flope.flopeanzeige.Bild;
+import com.flope.flopeanzeige.Job;
+import com.flope.flopeanzeige.Scheduler;
+import com.flope.flopeanzeige.Sperrbildschirmjob;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTimePicker;
 import java.io.File;
@@ -89,7 +95,7 @@ public class MainViewController implements Initializable {
          //this line gets the stage information from the main class
          
          Stage Mainwindow = (Stage) root.getScene().getWindow();
-         MainScene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+         MainScene.getStylesheets().add(getClass().getResource("/styles/Styles.css").toExternalForm());
          Mainwindow.setScene(MainScene);
          Mainwindow.show();
          
@@ -177,8 +183,16 @@ public class MainViewController implements Initializable {
       soleScheduler.addtowaitList(job);
       
       POJOtoJSON conv = new POJOtoJSON();
+      JSONtoPOJO conv2 = new JSONtoPOJO();
       
-      conv.convertoJSON(job);
+      String JSONString = conv.convertoJSON(job);
+      
+      System.out.println("Konvertiert"+JSONString);
+      
+      Job job2 = conv2.convertJSONtoPOJO(JSONString);
+      
+      System.out.println(job2);
+      System.out.println(job2.gettimestart());
       
     
               
