@@ -6,6 +6,7 @@
 package com.flope.flopeanzeige;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import java.io.Serializable;
 import java.net.URISyntaxException;
 import java.time.LocalDateTime;
@@ -21,20 +22,20 @@ public class Sperrbildschirmjob extends Job implements Serializable {
     private String displaynumber;
 
     
-    public Sperrbildschirmjob(){
+    public Sperrbildschirmjob() throws URISyntaxException{
     
     }
     
     
+@JsonCreator
 
-
-    public Sperrbildschirmjob(String fxmllocation, String imagelocation, String displaynumber, long timecreatedMillis, LocalDateTime timecreatedLocalDatetime,long timestart, long timeend, Boolean beendet, String Wiederholung) throws URISyntaxException {
+    public Sperrbildschirmjob(@JsonProperty("fxmllocation") String fxmllocation, @JsonProperty("imagelocation") String imagelocation,@JsonProperty("displaynumber") String displaynumber,@JsonProperty("timecreatedMillis") long timecreatedMillis, @JsonProperty("timestart")long timestart,@JsonProperty("timeend") long timeend, @JsonProperty("beendet") Boolean beendet) throws URISyntaxException {
         
-        super(timecreatedMillis, timecreatedLocalDatetime, timestart, timeend, beendet);
+        super(timecreatedMillis, timestart, timeend, beendet);
         this.fxmllocation = fxmllocation;
         this.imagelocation = imagelocation;
         this.displaynumber = displaynumber;
-        this.Wiederholung = Wiederholung;
+        
     }
     
 

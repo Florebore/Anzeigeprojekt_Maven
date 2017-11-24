@@ -5,6 +5,7 @@
  */
 package com.flope.flopeanzeige;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import java.io.Serializable;
 import java.net.URISyntaxException;
 import java.time.Instant;
@@ -23,7 +24,7 @@ import java.time.ZoneId;
 public class Job implements Serializable {
     
  protected long timecreatedMillis;
- protected LocalDateTime timecreatedLocalDatetime;
+ //protected LocalDateTime timecreatedLocalDatetime;
  protected long timestart;
  protected long timeend; 
  protected Boolean beendet;
@@ -31,9 +32,10 @@ public class Job implements Serializable {
   // einmal wöchentlich etc sind die möglichen Ausführungsformen
   public String Wiederholung;
 
-    public Job(long timecreatedMillis, LocalDateTime timecreatedLocaltime, long timestart, long timeend, Boolean beendet) {
+
+    public Job(long timecreatedMillis, long timestart, long timeend, Boolean beendet) {
         this.timecreatedMillis = System.currentTimeMillis();
-        this.timecreatedLocalDatetime = LocalDateTime.now();
+        //this.timecreatedLocalDatetime = LocalDateTime.now();
         this.timestart = timestart;
         this.timeend = timeend;
         this.beendet = beendet;
@@ -46,7 +48,7 @@ public class Job implements Serializable {
     public Job() throws URISyntaxException {
         
         timecreatedMillis = System.currentTimeMillis();
-        timecreatedLocalDatetime = LocalDateTime.now();
+        
        
         
     }
@@ -55,14 +57,6 @@ public class Job implements Serializable {
     
     this.timecreatedMillis = timecocreated;
     
-    }
-
-    public LocalDateTime getTimecreatedLocalDatetime() {
-        return timecreatedLocalDatetime;
-    }
-
-    public void setTimecreatedLocalDatetime(LocalDateTime timecreated1) {
-        this.timecreatedLocalDatetime = timecreated1;
     }
 
     public Boolean getBeendet() {
@@ -95,10 +89,6 @@ public class Job implements Serializable {
     
     return this.timecreatedMillis;
     }
-    
-    public LocalDateTime getcreatedLocalDatetime(){
-    
-    return timecreatedLocalDatetime;}
     
     public long gettimestart(){
         

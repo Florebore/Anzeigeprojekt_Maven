@@ -171,7 +171,7 @@ public class MainViewController implements Initializable {
        bild.savepictofolder();
        Sperrbildschirmjob job = new Sperrbildschirmjob();
        System.out.println(job.gettimecreatedMillis());
-       System.out.println(job.getcreatedLocalDatetime());
+//       System.out.println(job.getcreatedLocalDatetime());
        System.out.println(this.getdatetimestart());
        job.settimestart(this.convertdatetimetomillis(this.getdatetimestart()));
        job.settimeend(this.convertdatetimetomillis(this.getdatetimeend()));
@@ -189,7 +189,7 @@ public class MainViewController implements Initializable {
       
       System.out.println("Konvertiert"+JSONString);
       
-      Job job2 = conv2.convertJSONtoPOJO(JSONString);
+      Sperrbildschirmjob job2 = conv2.convertJSONtoPOJO(JSONString);
       
       System.out.println(job2);
       System.out.println(job2.gettimestart());

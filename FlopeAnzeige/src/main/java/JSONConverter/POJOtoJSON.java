@@ -3,6 +3,7 @@ package JSONConverter;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import com.flope.flopeanzeige.Job;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -13,7 +14,7 @@ import java.util.logging.Logger;
  */
 public class POJOtoJSON {
     
-    ObjectMapper mapper = new ObjectMapper();
+    ObjectMapper mapper = new ObjectMapper().enable((SerializationFeature.INDENT_OUTPUT));
     
     public String convertoJSON (Job job){
         
@@ -31,3 +32,7 @@ public class POJOtoJSON {
     }
     
 }
+//Convert to timestamp use following code 
+
+//mapper.registerModule(new JavaTimeModule());
+// mapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
