@@ -1,5 +1,5 @@
 
-package JSONConverter;
+package com.flope.converter;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -12,7 +12,7 @@ import java.util.logging.Logger;
  *
  * @author Florian
  */
-public class POJOtoJSON {
+public class POJOtoJSONString {
     
     ObjectMapper mapper = new ObjectMapper().enable((SerializationFeature.INDENT_OUTPUT));
     
@@ -25,7 +25,7 @@ public class POJOtoJSON {
         try {
             JSONString = mapper.writeValueAsString(job);
         } catch (JsonProcessingException ex) {
-            Logger.getLogger(POJOtoJSON.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(POJOtoJSONString.class.getName()).log(Level.SEVERE, null, ex);
         }
       
     return JSONString;

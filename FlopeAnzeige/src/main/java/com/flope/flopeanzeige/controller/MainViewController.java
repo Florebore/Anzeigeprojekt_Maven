@@ -5,9 +5,11 @@
  */
 package com.flope.flopeanzeige.controller;
 
-import JSONConverter.JSONtoPOJO;
+import com.flope.clientendpoint.ServerConnection;
+import com.flope.clientendpoint.WebSocketEndpointClient;
+import com.flope.converter.JSONStringtoPOJOSperrbildschirmjob;
 import com.flope.flopeanzeige.controller.SperrbildController;
-import JSONConverter.POJOtoJSON;
+import com.flope.converter.POJOtoJSONString;
 import com.flope.flopeanzeige.Bild;
 import com.flope.flopeanzeige.Job;
 import com.flope.flopeanzeige.Scheduler;
@@ -42,6 +44,8 @@ import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.Window;
+import javax.websocket.DeploymentException;
+import javax.websocket.WebSocketContainer;
 
 /**
  * FXML Controller class
@@ -164,7 +168,7 @@ public class MainViewController implements Initializable {
     }
     
     
-    public void sperrbildschirmanzeigen(ActionEvent event) throws IOException, URISyntaxException, CloneNotSupportedException { 
+    public void sperrbildschirmanzeigen(ActionEvent event) throws IOException, URISyntaxException, CloneNotSupportedException, DeploymentException { 
     
        sperrcontroller = new SperrbildController();
        Image sperrbildreturn = bild.getsperrbild();
@@ -182,17 +186,24 @@ public class MainViewController implements Initializable {
                
       soleScheduler.addtowaitList(job);
       
-      POJOtoJSON conv = new POJOtoJSON();
-      JSONtoPOJO conv2 = new JSONtoPOJO();
+      POJOtoJSONString conv = new POJOtoJSONString();
+      JSONStringtoPOJOSperrbildschirmjob conv2 = new JSONStringtoPOJOSperrbildschirmjob();
       
       String JSONString = conv.convertoJSON(job);
       
       System.out.println("Konvertiert"+JSONString);
       
-      Sperrbildschirmjob job2 = conv2.convertJSONtoPOJO(JSONString);
+      Sperrbildschirmjob job2 = conv2.convertJSONStringtoPOJOSperrbildschirmjob(JSONString);
       
       System.out.println(job2);
       System.out.println(job2.gettimestart());
+      ServerConnection con = new ServerConnection();
+      con.sendJSONStringtoServer(JSONString);
+      
+      
+     
+      
+      
       
     
               
