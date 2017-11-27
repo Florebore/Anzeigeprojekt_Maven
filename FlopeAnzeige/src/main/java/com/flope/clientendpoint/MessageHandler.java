@@ -9,6 +9,7 @@ package com.flope.clientendpoint;
  *
  * @author Florian
  */
-public class WebSocketMessageHandler {
+public interface MessageHandler {
     
+    public void handleMessage(String message);
 }

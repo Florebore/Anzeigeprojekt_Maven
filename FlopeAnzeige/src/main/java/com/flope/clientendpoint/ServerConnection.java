@@ -50,9 +50,9 @@ public class ServerConnection {
             final WebSocketEndpointClient clientEndPoint = new WebSocketEndpointClient(new URI(Stringuri));
 
             // add listener
-            clientEndPoint.addMessageHandler((String message) -> {
-                System.out.println(message);
-            });
+          //  clientEndPoint.addMessageHandler((String message) -> {
+          //      System.out.println(message);
+           // });
 
             // send message to websocket
             clientEndPoint.sendMessage(JSONString);
@@ -65,16 +65,6 @@ public class ServerConnection {
         }
         }
 }
-            /* public void transmitJSONString(String JSONString) throws IOException, URISyntaxException, DeploymentException{
-            WebSocketEndpointClient endpoint = this.connecttoserver();
-            endpoint.sendMessage(JSONString);
-            }*/ 
-
-       /* public void transmitJSONString(String JSONString) throws IOException, URISyntaxException, DeploymentException{
-            
-            WebSocketEndpointClient endpoint = this.connecttoserver();
-            endpoint.sendMessage(JSONString);
-        }*/
-
+           
 
 

@@ -25,10 +25,10 @@ import javax.websocket.WebSocketContainer;
  * @author Florian
  */
 @ClientEndpoint
-public class WebSocketEndpointClient{
+public class WebSocketEndpointClient {
     
     private Session session;
-    private MessageHandler messageHandler;
+   // private MessageHandler messageHandler;
      
     
    public WebSocketEndpointClient (URI endpointURI) {
@@ -46,19 +46,21 @@ public class WebSocketEndpointClient{
    
     @OnMessage
     public void onMessage(String message) {
-        if (this.messageHandler != null) {
-            this.messageHandler.handleMessage(message);
+     //   if (this.messageHandler != null) {
+       //     this.messageHandler.handleMessage(message);
+            System.out.println(message);
+       
         }
-    }
+    
 
     /**
      * register message handler
      *
      * @param msgHandler
      */
-    public void addMessageHandler(MessageHandler msgHandler) {
-        this.messageHandler = msgHandler;
-    }
+   // public void addMessageHandler(MessageHandler msgHandler) {
+     //   this.messageHandler = msgHandler;
+   // }
 
     /**
      * Send a message.
@@ -74,10 +76,6 @@ public class WebSocketEndpointClient{
      *
      * @author Jiji_Sasidharan
      */
-    public static interface MessageHandler {
-
-        public void handleMessage(String message);
-    }
-}
+   }
 
 
