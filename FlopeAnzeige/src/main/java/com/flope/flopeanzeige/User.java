@@ -26,6 +26,7 @@ public class User {
     private String passwort;
     private String rolle;
     public String username;
+    private String UserID;
     LoginController einlogco = new LoginController();
     Database_Controller datco = new Database_Controller();
  

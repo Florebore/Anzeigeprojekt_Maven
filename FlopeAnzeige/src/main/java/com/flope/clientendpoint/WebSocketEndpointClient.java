@@ -5,6 +5,7 @@
  */
 package com.flope.clientendpoint;
 
+import com.flope.flopeanzeige.User;
 import java.io.IOException;
 import java.net.URI;
 import java.util.logging.Level;
@@ -28,7 +29,29 @@ import javax.websocket.WebSocketContainer;
 public class WebSocketEndpointClient {
     
     private Session session;
-   // private MessageHandler messageHandler;
+    
+    //um den Client zu identifizieren wird bei der @onOpen Mehode bereits die UserID aus der Datenbank mitgesendet, um den User eindeutig zu identifizieren
+    
+    private String UserID;
+    private User user;
+
+    public String getUserID() {
+        return UserID;
+    }
+
+    public void setUserID(String UserID) {
+        this.UserID = UserID;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+            
+ 
      
     
    public WebSocketEndpointClient (URI endpointURI) {
@@ -42,7 +65,11 @@ public class WebSocketEndpointClient {
     
    @OnOpen
    
-   public void OnOpen(Session session) {this.session = session;}
+   public void OnOpen(Session session) throws IOException {this.session = session;
+                                        
+  // this.session.getBasicRemote().sendText(UserID);
+   
+   }
    
     @OnMessage
     public void onMessage(String message) {
@@ -52,21 +79,6 @@ public class WebSocketEndpointClient {
        
         }
     
-
-    /**
-     * register message handler
-     *
-     * @param msgHandler
-     */
-   // public void addMessageHandler(MessageHandler msgHandler) {
-     //   this.messageHandler = msgHandler;
-   // }
-
-    /**
-     * Send a message.
-     *
-     * @param message
-     */
     public void sendMessage(String message) {
         this.session.getAsyncRemote().sendText(message);
     }
