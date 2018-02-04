@@ -7,6 +7,7 @@ package com.flope.converter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.flope.flopeanzeige.Sperrbildschirmjob;
+import com.flope.flopeanzeige.User;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -15,7 +16,7 @@ import java.util.logging.Logger;
  *
  * @author Florian
  */
-public class JSONStringtoPOJOSperrbildschirmjob {
+public class JSONStringtoPOJO {
     
     ObjectMapper mapper = new ObjectMapper();
     
@@ -25,11 +26,25 @@ public class JSONStringtoPOJOSperrbildschirmjob {
         try {
             job = mapper.readValue(JSON,Sperrbildschirmjob.class);
         } catch (IOException ex) {
-            Logger.getLogger(JSONStringtoPOJOSperrbildschirmjob.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(JSONStringtoPOJO.class.getName()).log(Level.SEVERE, null, ex);
         }
         
     return job;
     
     }
+    
+    public User convertJSONStringtoPOJOUSER(String JSON){
+        
+        User user = null;
+        
+        try {
+            user = mapper.readValue(JSON,User.class);
+        }
+        catch (IOException ex) {
+            Logger.getLogger(JSONStringtoPOJO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return user;
+    }
+
     
 }

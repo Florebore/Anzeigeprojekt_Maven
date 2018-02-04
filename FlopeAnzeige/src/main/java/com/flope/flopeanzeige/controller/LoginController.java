@@ -82,7 +82,13 @@ public class LoginController implements Initializable {
      
      
         System.out.println(user.username+"loginmethod");
-       if(user.userexistencetest()== true){
+        
+    }
+        
+        
+        //OIlder code from working version without Glassfish Server. This here was a direct connection to the local database
+        
+  /*     if(user.userexistencetest()== true){
            
             user.setpassword(this.enteredpw);
             System.out.println(enteredpw);
@@ -93,7 +99,7 @@ public class LoginController implements Initializable {
        
        else { this.incorrectcredentials();}
             
-    }
+    }*/
     
   //Changes screen to whatever screen you want....more work here it is a change to mainview
     

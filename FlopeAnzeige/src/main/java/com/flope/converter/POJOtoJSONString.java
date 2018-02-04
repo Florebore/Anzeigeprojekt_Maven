@@ -5,6 +5,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.flope.flopeanzeige.Job;
+import com.flope.flopeanzeige.User;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -14,21 +15,36 @@ import java.util.logging.Logger;
  */
 public class POJOtoJSONString {
     
+    //Methods of the class convert different classes to JSON
+    
     ObjectMapper mapper = new ObjectMapper().enable((SerializationFeature.INDENT_OUTPUT));
     
-    public String convertoJSON (Job job){
+    public String converJOBtoJSON (Job job){
         
         
         
         
-       String JSONString = null;
+       String JSONJOBString = null;
         try {
-            JSONString = mapper.writeValueAsString(job);
+            JSONJOBString = mapper.writeValueAsString(job);
         } catch (JsonProcessingException ex) {
             Logger.getLogger(POJOtoJSONString.class.getName()).log(Level.SEVERE, null, ex);
         }
       
-    return JSONString;
+    return JSONJOBString;
+    }
+    
+    public String covertUSERtoJSON (User user){
+        
+        String JSONUSERString = null;
+    try{
+    JSONUSERString = mapper.writeValueAsString(user);}
+    catch (JsonProcessingException ex){
+        Logger.getLogger(POJOtoJSONString.class.getName()).log(Level.SEVERE,null,ex);
+    }
+
+    return JSONUSERString;
+        
     }
     
 }

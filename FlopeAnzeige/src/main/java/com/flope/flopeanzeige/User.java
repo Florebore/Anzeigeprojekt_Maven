@@ -26,7 +26,7 @@ public class User {
     private String passwort;
     private String rolle;
     public String username;
-    private String UserID;
+    private int UserID;
     LoginController einlogco = new LoginController();
     Database_Controller datco = new Database_Controller();
  
@@ -85,16 +85,53 @@ public class User {
 
 }
 
-        public void setpassword(String passwort){
-            
-            this.passwort = passwort;
-        }
+    public String getVorname() {
+        return vorname;
+    }
 
-        public String getpassword(){ return passwort;}
+    public void setVorname(String vorname) {
+        this.vorname = vorname;
+    }
 
+    public String getNachname() {
+        return nachname;
+    }
 
+    public void setNachname(String nachname) {
+        this.nachname = nachname;
+    }
 
+    public String getPasswort() {
+        return passwort;
+    }
 
+    public void setPasswort(String passwort) {
+        this.passwort = passwort;
+    }
 
+    public String getRolle() {
+        return rolle;
+    }
 
+    public void setRolle(String rolle) {
+        this.rolle = rolle;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public int getUserID() {
+        return UserID;
+    }
+
+    public void setUserID(int UserID) {
+        this.UserID = UserID;
+    }
+
+   
 }

@@ -7,7 +7,8 @@ package com.flope.flopeanzeige.controller;
 
 import com.flope.clientendpoint.ServerConnection;
 import com.flope.clientendpoint.WebSocketEndpointClient;
-import com.flope.converter.JSONStringtoPOJOSperrbildschirmjob;
+import com.flope.converter.JSONStringtoPOJO;
+import com.flope.converter.JSONStringtoPOJO;
 import com.flope.flopeanzeige.controller.SperrbildController;
 import com.flope.converter.POJOtoJSONString;
 import com.flope.flopeanzeige.Bild;
@@ -187,9 +188,9 @@ public class MainViewController implements Initializable {
       soleScheduler.addtowaitList(job);
       
       POJOtoJSONString conv = new POJOtoJSONString();
-      JSONStringtoPOJOSperrbildschirmjob conv2 = new JSONStringtoPOJOSperrbildschirmjob();
+      JSONStringtoPOJO conv2 = new JSONStringtoPOJO();
       
-      String JSONString = conv.convertoJSON(job);
+      String JSONString = conv.converJOBtoJSON(job);
       
       System.out.println("Konvertiert"+JSONString);
       

@@ -27,7 +27,7 @@ public class ServerConnection {
     
         public ServerConnection() throws URISyntaxException{
             
-            this.Stringuri = "ws://localhost:8080/Anzeigeprojekt_Server/websocket";
+            this.Stringuri = "ws://localhost:8080/Anzeigeprojekt_Server/socket";
             this.uri = new URI(Stringuri);
             wsec = null;
         

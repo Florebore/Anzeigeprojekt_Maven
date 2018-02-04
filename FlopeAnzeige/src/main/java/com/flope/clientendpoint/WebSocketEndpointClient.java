@@ -12,6 +12,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.websocket.ClientEndpoint;
 import javax.websocket.ContainerProvider;
+import javax.websocket.DeploymentException;
 import javax.websocket.Endpoint;
 import javax.websocket.EndpointConfig;
 import javax.websocket.MessageHandler;
@@ -30,7 +31,7 @@ public class WebSocketEndpointClient {
     
     private Session session;
     
-    //um den Client zu identifizieren wird bei der @onOpen Mehode bereits die UserID aus der Datenbank mitgesendet, um den User eindeutig zu identifizieren
+    /*um den Client zu identifizieren wird bei der @onOpen Mehode bereits die UserID aus der Datenbank mitgesendet, um den User eindeutig zu identifizieren
     
     private String UserID;
     private User user;
@@ -52,13 +53,13 @@ public class WebSocketEndpointClient {
     }
             
  
-     
+     */
     
    public WebSocketEndpointClient (URI endpointURI) {
         try {
             WebSocketContainer container = ContainerProvider.getWebSocketContainer();
             container.connectToServer(this, endpointURI);
-        } catch (Exception e) {
+        } catch (IOException | DeploymentException e) {
             throw new RuntimeException(e);
         }
     }
