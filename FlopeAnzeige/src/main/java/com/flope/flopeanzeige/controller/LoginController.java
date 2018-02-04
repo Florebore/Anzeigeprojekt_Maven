@@ -6,8 +6,11 @@ package com.flope.flopeanzeige.controller;
  * and open the template in the editor.
  */
 
+import com.flope.clientendpoint.ServerConnection;
+import com.flope.converter.POJOtoJSONString;
 import com.flope.flopeanzeige.User;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -24,6 +27,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import javax.websocket.DeploymentException;
 
 /**
  * FXML Controller class
@@ -72,16 +76,24 @@ public class LoginController implements Initializable {
         System.out.println("Nutzername oder Passwort falsch!");
     }
     
-    public void login(ActionEvent event) throws SQLException, IOException{
+    public void login(ActionEvent event) throws SQLException, IOException, URISyntaxException, DeploymentException{
         
      user = new User();
      user.username = this.getenteredusername();
      enteredpw = Passwordfield.getText();
-
-    
      
+     System.out.println(user.username+"loginmethod");
      
-        System.out.println(user.username+"loginmethod");
+     POJOtoJSONString conv = new POJOtoJSONString();
+     String loginuser = conv.covertUSERtoJSON(user);
+     
+     //Login wird zum JSON-String vorne angefügt, um auf dem Server eine Unterscheidung machen zu können, an welche Methode die Daten angefügt werden sollen
+     loginuser = "login "+loginuser;
+     
+     //Senden des JSON-User-Strings an den Server
+     
+     ServerConnection con = new ServerConnection();
+     con.sendJSONStringtoServer(loginuser);
         
     }
         

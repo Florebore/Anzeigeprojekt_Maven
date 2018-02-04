@@ -16,6 +16,7 @@ import java.util.logging.Logger;
  *
  * @author Florian
  */
+//TODO eventuell ein Singleton aus den beiden Convertern machen, damit man ihn aus jeder Klasse aufrufen kann
 public class JSONStringtoPOJO {
     
     ObjectMapper mapper = new ObjectMapper();

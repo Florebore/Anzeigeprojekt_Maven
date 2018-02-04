@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 
+import com.flope.clientendpoint.IncomingMessagesHandler;
 import com.flope.clientendpoint.ServerConnection;
 import com.flope.converter.POJOtoJSONString;
 import com.flope.flopeanzeige.User;
@@ -42,7 +43,7 @@ public class SendReceiveARJSON {
    @Test
    public void SendReceiveJSON() throws IOException, SQLException, URISyntaxException, DeploymentException{
        
-       String userparcel = null; 
+       String userparcel = null;
        
        User user = new User();
        user.setPasswort("test");
@@ -50,9 +51,15 @@ public class SendReceiveARJSON {
        user.setUserID(1);
        POJOtoJSONString psc = new POJOtoJSONString();
        userparcel = psc.covertUSERtoJSON(user);
+       userparcel = "login " + userparcel;
+       IncomingMessagesHandler i = new IncomingMessagesHandler();
+       i.incometest(userparcel);
        System.out.println(userparcel);
         ServerConnection con = new ServerConnection();
         con.sendJSONStringtoServer(userparcel);
+        
+        
+        
        
        
    }
