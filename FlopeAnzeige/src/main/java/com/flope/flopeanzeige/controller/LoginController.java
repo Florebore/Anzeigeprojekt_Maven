@@ -76,8 +76,11 @@ public class LoginController implements Initializable {
         System.out.println("Nutzername oder Passwort falsch!");
     }
     
-    public void login(ActionEvent event) throws SQLException, IOException, URISyntaxException, DeploymentException{
-        
+    public Boolean login(ActionEvent event) throws SQLException, IOException, URISyntaxException, DeploymentException{
+     /*Über den Boolschen Wert correctcredentials soll mit Hilfe der OnMessageMethode Serverseitig nur in True oder false zurückgegeben werden
+     dann sollte die Verdindung wieder gekappt werden. Vorher sollten am besten alle wichtigen Werte, wie Rechte etc. übertragen werden.*/
+     Boolean correctcredentials;
+       correctcredentials = false;
      user = new User();
      user.username = this.getenteredusername();
      enteredpw = Passwordfield.getText();
@@ -94,7 +97,7 @@ public class LoginController implements Initializable {
      
      ServerConnection con = new ServerConnection();
      con.sendJSONStringtoServer(loginuser);
-        
+    return correctcredentials;    
     }
         
         

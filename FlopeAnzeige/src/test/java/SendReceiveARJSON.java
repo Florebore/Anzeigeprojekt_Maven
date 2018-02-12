@@ -58,7 +58,7 @@ public class SendReceiveARJSON {
         ServerConnection con = new ServerConnection();
         con.sendJSONStringtoServer(userparcel);
         
-        
+       
         
        
        
