@@ -67,7 +67,7 @@ public class WebSocketEndpointClient {
    @OnOpen
    
    public void OnOpen(Session session) throws IOException {this.session = session;
-                                        
+       System.out.println(session.getId());
   // this.session.getBasicRemote().sendText(UserID);
    
    }

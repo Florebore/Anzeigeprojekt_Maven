@@ -1,5 +1,5 @@
 
-package com.flope.flopeanzeige;
+/*package com.flope.flopeanzeige;
 
 import java.io.IOException;
 import javafx.application.Application;
@@ -13,7 +13,7 @@ import javafx.stage.Stage;
  *
  * @author Florian
  */
-public class MainApplication extends Application {
+/*public class MainApplication extends Application {
     
     
     private Stage window;
@@ -49,9 +49,9 @@ public class MainApplication extends Application {
      * @param args command line arguments
     */
 
-    public static void main(String[] args) {
+  /*  public static void main(String[] args) {
         launch(args);
     }
 }
-
+*/
     

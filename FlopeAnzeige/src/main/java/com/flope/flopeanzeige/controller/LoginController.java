@@ -84,6 +84,7 @@ public class LoginController implements Initializable {
      user = new User();
      user.username = this.getenteredusername();
      enteredpw = Passwordfield.getText();
+     user.setPasswort(enteredpw);
      
      System.out.println(user.username+"loginmethod");
      
