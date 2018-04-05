@@ -31,34 +31,12 @@ public class WebSocketEndpointClient {
     
     private Session session;
     
-    /*um den Client zu identifizieren wird bei der @onOpen Mehode bereits die UserID aus der Datenbank mitgesendet, um den User eindeutig zu identifizieren
-    
-    private String UserID;
-    private User user;
-
-    public String getUserID() {
-        return UserID;
-    }
-
-    public void setUserID(String UserID) {
-        this.UserID = UserID;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-            
- 
-     */
     
    public WebSocketEndpointClient (URI endpointURI) {
         try {
             WebSocketContainer container = ContainerProvider.getWebSocketContainer();
-            container.connectToServer(this, endpointURI);
+            Session connectToServer;
+            connectToServer = container.connectToServer(this, endpointURI);
         } catch (IOException | DeploymentException e) {
             throw new RuntimeException(e);
         }
