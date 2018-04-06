@@ -15,10 +15,10 @@ import java.sql.Statement;
  *
  * @author Florian
  */
-public class Database_Controller {
+public class DEPRECATED_Database_Controller {
     
  
-    public Database_Controller(){
+/*    public Database_Controller(){
         
         
     }
@@ -229,4 +229,4 @@ public void closeconnection(Connection c) throws SQLException {
 }
 
 
-}
+}*/}

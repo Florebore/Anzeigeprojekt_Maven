@@ -5,7 +5,7 @@
  */
 package com.flope.flopeanzeige;
 
-import com.flope.flopeanzeige.controller.Database_Controller;
+
 import com.flope.flopeanzeige.controller.LoginController;
 import java.io.IOException;
 import java.sql.SQLException;
@@ -28,7 +28,7 @@ public class User {
     public String username;
     private int UserID;
     LoginController einlogco = new LoginController();
-    Database_Controller datco = new Database_Controller();
+    
  
 
    public User() throws IOException, SQLException{
@@ -42,7 +42,7 @@ public class User {
    
    
   
-    public Boolean userexistencetest() throws SQLException, IOException {
+   /* public Boolean userexistencetest() throws SQLException, IOException {
         
        Boolean userexistence = null;
        String enteredusername;
@@ -83,7 +83,7 @@ public class User {
             return passwortcorrect;
 
 
-}
+}*/
 
     public String getVorname() {
         return vorname;
